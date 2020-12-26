@@ -41,8 +41,8 @@ public class Arbol {
      * <ul>
      * <li>El sucesor del hijo sustituye al hijo.</li>
      * <li>Si el sucesor tiene hijo (Solo puede ser derecho, si tuviera hijo izq él
-     * sería el sucesor por ser menor) este pasa a su posicion, es decir, su abuejo (padre del
-     * sucesor) lo adopta</li>
+     * sería el sucesor por ser menor) este pasa a su posicion, es decir, su abuejo
+     * (padre del sucesor) lo adopta</li>
      * </ul>
      * </li>
      * </ul>
@@ -67,14 +67,44 @@ public class Arbol {
                 Arbol nieto = (hijo.dch == null) ? hijo.dch : hijo.izq;
                 this.dch = (hijo == this.dch) ? nieto : this.dch;
                 this.izq = (hijo == this.izq) ? nieto : this.izq;
-            } else {
-                // si 2 nietos
-                
+            } else { // si 2 nietos
+                // TODO El sucesor del hijo sustituye al hijo.
+                // El sucesor puede ser directamente el hijo derecho
+                Arbol padreSucedor = hijo.preSucesor();
+                Arbol sucesor = padreSucedor.izq;
+
+                // Si el sucesor tiene hijo (Solo puede ser derecho, si tuviera hijo izq él
+                // sería el sucesor por ser menor) este pasa a su posicion, es decir, su abuejo
+                // (padre del sucesor) lo adopta
+                padreSucesor(hijo);
             }
         } else {
             // hijo no es el valor
             hijo.borrar(v); // Llamada recursiva
         }
+    }
+
+    private Arbol preSucesor() {
+        if (dch == null)
+            return this;
+        else if (dch.izq == null)
+            return preSucesor(this.dch);
+    }
+
+    private Arbol preSucesor(Arbol arbol) {
+        if ()
+        return null;
+        return arbol.izq;
+    }
+
+    private void padreSucesor(Arbol hijo) {
+        if (hijo.izq != null)
+            if (hijo.izq.getIzquierdo() != null)
+                return preSucesor(hijo.izq);
+    }
+
+    private SubArbol padreSucesor(SubArbol n) {
+        return n;
     }
 
 }
