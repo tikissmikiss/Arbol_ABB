@@ -17,7 +17,7 @@ import lab1.cola.Cola;
  * {@code hijoIzq} <= {@code valor} < {@code hijoDch}
  * </p>
  */
-public class ABB {
+public class ABB_no_POO {
     private SubArbol raiz;
     private int size;
     private int maximo;
@@ -30,12 +30,12 @@ public class ABB {
      * 
      * @param v
      */
-    public ABB(int v) {
+    public ABB_no_POO(int v) {
         raiz = new SubArbol(v);
         size = 0;
     }
 
-    public ABB() {
+    public ABB_no_POO() {
         size = 0;
     }
 
@@ -185,7 +185,7 @@ public class ABB {
     }
 
     public static void main(String[] args) throws Exception {
-        ABB a = new ABB();
+        ABB_no_POO a = new ABB_no_POO();
         int[] elementos = { 8, 3, 10, 1, 6, 14, 4, 7, 13, 5 };
         for (int i : elementos) {
             a.insertar(i);
