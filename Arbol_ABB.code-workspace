@@ -5,6 +5,9 @@
 		}
 	],
 	"settings": {
-		"java.dependency.packagePresentation": "hierarchical"
+		"java.dependency.packagePresentation": "hierarchical",
+		"cSpell.words": [
+			"minimo"
+		]
 	}
 }
